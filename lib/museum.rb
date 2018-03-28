@@ -29,7 +29,13 @@ class Museum
 #
   def patrons_of(exhibit)
     @patrons[exhibit]
-    # binding.pry
+    binding.pry
+  end
+
+  def exhibits_by_attendees
+    @patrons.values.sort_by do |value|
+      value.length
+    end
   end
 
 end
