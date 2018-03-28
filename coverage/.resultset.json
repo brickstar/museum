@@ -1,6 +1,48 @@
 {
   "Unit Tests": {
     "coverage": {
+      "/Users/brickstar/turing/module1/timed_independant/museum/lib/museum.rb": [
+        1,
+        1,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/brickstar/turing/module1/timed_independant/museum/test/patron_test.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
       "/Users/brickstar/turing/module1/timed_independant/museum/lib/patron.rb": [
         1,
         1,
@@ -15,6 +57,6 @@
         null
       ]
     },
-    "timestamp": 1522250072
+    "timestamp": 1522250324
   }
 }
