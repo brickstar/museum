@@ -26,9 +26,15 @@ class MuseumTest < Minitest::Test
 
     dmns.add_exhibit("Dead Sea Scrolls", 10)
     dmns.add_exhibit("Gems and Minerals", 0)
-    
+
     expected = {"Dead Sea Scrolls" => 10, "Gems and Minerals" => 0}
 
     assert_equal expected, dmns.exhibits
+  end
+
+  def test_it_has_revenue_and_it_starts_at_zero
+    dmns = Museum.new("Denver Museum of Nature and Science")
+
+    assert_equal 0, dmns.revenue
   end
 end
