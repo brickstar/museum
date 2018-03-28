@@ -37,4 +37,25 @@ class MuseumTest < Minitest::Test
 
     assert_equal 0, dmns.revenue
   end
+
+  def test_it_can_admit_patrons
+    dmns = Museum.new("Denver Museum of Nature and Science")
+    dmns.add_exhibit("Dead Sea Scrolls", 10)
+    dmns.add_exhibit("Gems and Minerals", 0)
+
+    bob = Patron.new("Bob")
+    bob.add_interest("Gems and Minerals")
+    bob.add_interest("Dead Sea Scrolls")
+    bob.add_interest("Imax")
+
+    sally = Patron.new("Sally")
+    sally.add_interest("Dead Sea Scrolls")
+
+    dmns.revenue
+
+    dmns.admit(bob)
+    dmns.admit(sally)
+    
+    assert_equal 40, dmns.revenue
+  end
 end
