@@ -1,0 +1,15 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/Users/brickstar/turing/module1/timed_independant/museum/lib/patron.rb": [
+        1,
+        1,
+        1,
+        2,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1522249847
+  }
+}

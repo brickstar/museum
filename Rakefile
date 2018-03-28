@@ -1,7 +1,11 @@
+
 require "rake"
 require "rake/testtask"
 
 Rake::TestTask.new do |t|
-rakeend
+  t.libs << "test"
+  t.test_files = FileList['test/*_test.rb']
+  t.warning = false
+end
 
 task default: :test
