@@ -28,8 +28,7 @@ class Museum
 #museum has list of patron names paired with exhibits they have attended
 #
   def patrons_of(exhibit)
-    binding.pry
-    @patrons.values
+    @patrons[exhibit]
     # binding.pry
   end
 
