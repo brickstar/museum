@@ -5,7 +5,7 @@ class Museum
     @name = name
     @exhibits = Hash.new(0)
     @revenue = 0
-    @patrons = Hash.new(0)
+    @patrons = Hash.new{|h, k| h[k] = []}
   end
 
   def add_exhibit(name, cost)
@@ -21,14 +21,14 @@ class Museum
       @revenue += match
     end
     matches.each_key do |key|
-      @patrons[key] = patron.name
-      binding.pry
+      @patrons[key] << patron.name
     end
   end
 
 #museum has list of patron names paired with exhibits they have attended
 #
   def patrons_of(exhibit)
+    binding.pry
     @patrons.values
     # binding.pry
   end
