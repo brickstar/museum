@@ -13,4 +13,10 @@ class PatronTest < Minitest::Test
 
     assert_equal "Bob", patron.name
   end
+
+  def test_its_interests_start_empty
+    patron = Patron.new("Bob")
+
+    assert_equal [], patron.interests
+  end
 end
