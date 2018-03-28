@@ -78,4 +78,29 @@ class MuseumTest < Minitest::Test
 
     assert_equal ["Bob", "Sally"], dmns.patrons_of("Gems and Minerals")
   end
+
+  def test_exhibits_by_attendee
+    dmns = Museum.new("Denver Museum of Nature and Science")
+    dmns.add_exhibit("Dead Sea Scrolls", 10)
+    dmns.add_exhibit("Gems and Minerals", 0)
+
+    bob = Patron.new("Bob")
+    bob.add_interest("Gems and Minerals")
+    bob.add_interest("Dead Sea Scrolls")
+    bob.add_interest("Imax")
+
+    sally = Patron.new("Sally")
+    sally.add_interest("Dead Sea Scrolls")
+    sally.add_interest("Gems and Minerals")
+
+    bryan = Patron.new("Brian")
+    bryan.add_interest("Gems and Minerals")
+
+
+    dmns.admit(bob)
+    dmns.admit(sally)
+    dmns.admit(bryan)
+
+    assert_equal "", dmns.exhibits_by_attendee
+  end
 end
