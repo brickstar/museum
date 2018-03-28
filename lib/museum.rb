@@ -13,20 +13,16 @@ class Museum
 
   def admit(patron)
     @revenue += 10
-    matches = @exhibits.keys.map do |name|
-      patron.interests.find_all do |interest|
-        name == interest
-      end
-    end.flatten
-    matches.each do |match|
-      @revenue += 
+    matches = @exhibits.each_key do |key|
+      key == patron.interests
+    end
+    matches.each_value do |match|
+      @revenue += match
+    end
   end
-    binding.pry
     #check to see if an exhibit matches a patron's interest
     #if there is a match, add exhibit cost to revenue
     #
     #
 
-    end
-  end
 end
