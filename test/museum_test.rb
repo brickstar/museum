@@ -60,7 +60,6 @@ class MuseumTest < Minitest::Test
   end
 
   def test_exhibits_can_return_names_of_patrons
-skip
     dmns = Museum.new("Denver Museum of Nature and Science")
     dmns.add_exhibit("Dead Sea Scrolls", 10)
     dmns.add_exhibit("Gems and Minerals", 0)
@@ -73,6 +72,9 @@ skip
     sally = Patron.new("Sally")
     sally.add_interest("Dead Sea Scrolls")
     sally.add_interest("Gems and Minerals")
+
+    dmns.admit(bob)
+    dmns.admit(sally)
 
     assert_equal ["Bob", "Sally"], dmns.patrons_of("Gems and Minerals")
   end

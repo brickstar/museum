@@ -5,7 +5,7 @@ class Museum
     @name = name
     @exhibits = Hash.new(0)
     @revenue = 0
-    @patrons = []
+    @patrons = Hash.new(0)
   end
 
   def add_exhibit(name, cost)
@@ -16,16 +16,15 @@ class Museum
     @revenue += 10
     matches = @exhibits.each_key do |key|
       key == patron.interests
-      # @exhibits[patronpatron.name
     end
     matches.each_value do |match|
-      # binding.pry
       @revenue += match
     end
+    @patrons[patron.name] = matches.keys
   end
 
   def patrons_of(exhibit)
-
+    @patrons.keys
   end
   #a patron is admitted
   #if they have interest in an exhibit
