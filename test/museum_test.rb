@@ -101,6 +101,6 @@ class MuseumTest < Minitest::Test
     dmns.admit(sally)
     dmns.admit(bryan)
 
-    assert_equal "", dmns.exhibits_by_attendee
+    assert_equal [["Bob", "Sally", "Brian"], ["Bob", "Sally", "Brian"]], dmns.exhibits_by_attendees
   end
 end

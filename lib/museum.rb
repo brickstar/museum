@@ -29,7 +29,6 @@ class Museum
 #
   def patrons_of(exhibit)
     @patrons[exhibit]
-    binding.pry
   end
 
   def exhibits_by_attendees
