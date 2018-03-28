@@ -20,15 +20,17 @@ class Museum
     matches.each_value do |match|
       @revenue += match
     end
-    @patrons[patron.name] = matches.keys
+    matches.each_key do |key|
+      @patrons[key] = patron.name
+      binding.pry
+    end
   end
 
+#museum has list of patron names paired with exhibits they have attended
+#
   def patrons_of(exhibit)
-    @patrons.keys
+    @patrons.values
+    # binding.pry
   end
-  #a patron is admitted
-  #if they have interest in an exhibit
-  #revenue increases the amount of the exhibit cost
-  #
-  #exhibit
+
 end
